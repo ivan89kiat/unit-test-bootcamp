@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { add } = require("../utils.js");
+const { add, multiply } = require("../utils.js");
 
 describe("Utils", () => {
   describe("Add", () => {
@@ -21,6 +21,30 @@ describe("Utils", () => {
     it("Adds 2 negative numbers", () => {
       const result = add(-1, -1);
       expect(result).to.equal(-2);
+    });
+  });
+});
+
+describe("Utils", () => {
+  describe("Multiply", () => {
+    it("Multiply 2 of the same number", () => {
+      const result = multiply(2, 2);
+      expect(result).to.equal(4);
+    });
+
+    it("Multiply of 2 different numbers", () => {
+      const result = multiply(2, 5);
+      expect(result).to.equal(10);
+    });
+
+    it("Multiply a positive and negative number", () => {
+      const result = multiply(3, -1);
+      expect(result).to.equal(-3);
+    });
+
+    it("Multiply 2 negative numbers", () => {
+      const result = multiply(-2, -2);
+      expect(result).to.equal(4);
     });
   });
 });
